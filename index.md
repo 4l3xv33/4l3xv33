@@ -1,5 +1,6 @@
 ---
 layout: default
+title: "Alex Veerasammy | Autonomous Robotics Researcher"
 ---
 
 ## About
