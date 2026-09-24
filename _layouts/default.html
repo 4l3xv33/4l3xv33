@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | default: site.title | escape }}</title>
+    <meta name="description" content="{{ site.description | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/facelift.css' | relative_url }}">
+  </head>
+  <body>
+    {% assign profile = site.data.profile %}
+    <a class="skip-link" href="#main">Skip to content</a>
+    {% if profile.draft %}
+    <div class="draft-note"><span>Local preview</span> Not published</div>
+    {% endif %}
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href="{{ '/' | relative_url }}">{{ profile.name | escape }}</a>
+        {% if profile.navigation.size > 0 %}
+        <nav aria-label="Main navigation">
+          {% for item in profile.navigation %}<a href="{{ item.url }}">{{ item.label | escape }}</a>{% endfor %}
+        </nav>
+        {% endif %}
+      </header>
+      <main id="main" class="profile-layout">
+        <aside class="profile-summary" aria-label="Profile">
+          {% if profile.portrait %}
+          <img class="portrait" src="{{ profile.portrait | relative_url }}" alt="{{ profile.portrait_alt | escape }}" width="480" height="480">
+          {% elsif profile.portrait_placeholder %}
+          <div class="portrait portrait-placeholder" role="img" aria-label="Placeholder for a profile photo or robot illustration">
+            <span class="portrait-initials" aria-hidden="true">{{ profile.initials | escape }}</span>
+            <span class="portrait-label" aria-hidden="true">Photo or robot</span>
+          </div>
+          {% endif %}
+          <div class="identity">
+            <h1>{{ profile.name | escape }}</h1>
+            {% if profile.role %}<p class="role">{{ profile.role | escape }}</p>{% endif %}
+            {% if profile.education %}<p class="affiliation">{{ profile.education | escape }}</p>{% endif %}
+            {% if profile.affiliation %}<p class="affiliation">{% if profile.affiliation_url %}<a href="{{ profile.affiliation_url }}">{{ profile.affiliation | escape }}</a>{% else %}{{ profile.affiliation | escape }}{% endif %}</p>{% endif %}
+            {% if profile.college %}<p class="affiliation">{{ profile.college | escape }}</p>{% endif %}
+            {% if profile.location %}<p class="location">{{ profile.location | escape }}</p>{% endif %}
+          </div>
+          {% if profile.links.size > 0 %}
+          <ul class="profile-links" aria-label="Contact and profiles">
+            {% for link in profile.links %}
+            <li>{% if link.url %}<a href="{% if link.local %}{{ link.url | relative_url }}{% else %}{{ link.url | escape }}{% endif %}">{{ link.label | escape }}<span aria-hidden="true">↗</span></a>{% else %}<span class="placeholder-link" title="Sample label - link to be added">{{ link.label | escape }}</span>{% endif %}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </aside>
+        <div class="profile-content">
+          {{ content }}
+        </div>
+      </main>
+      <footer class="site-footer">
+        <span>© {{ site.time | date: '%Y' }} {{ profile.name | escape }}</span>
+        <a href="#main">Back to top ↑</a>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+title: "Alex Veerasammy | Autonomous Robotics Researcher"
+description: "Alex Veerasammy's research interests, publications, and personal projects."
+url: "https://alexveerasammy.com"
+baseurl: ""
+lang: en
+markdown: kramdown
+permalink: /notes/:title/
+timezone: America/New_York
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - scripts
+  - .bundle

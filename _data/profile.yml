@@ -1,0 +1,28 @@
+# Profile and About text supplied by Alex; publication details checked against sources.
+draft: false
+name: Alex Veerasammy
+initials: AV
+role: Autonomous Robotics Researcher
+education: M.S. Student in Artificial Intelligence
+affiliation: George Mason University
+college: College of Engineering and Computing
+location: Fairfax, Virginia
+portrait: "/assets/images/alex_and_qisa.jpg"
+portrait_alt: "Alex Veerasammy with Qisa, a robot."
+navigation:
+  - label: About
+    url: "#about"
+  - label: Interests
+    url: "#interests"
+  - label: Research
+    url: "#research"
+  - label: Personal Projects
+    url: "#personal-projects"
+links:
+  - label: Resume
+    url: "/assets/documents/Alex-Veerasammy-Resume.pdf"
+    local: true
+  - label: Email
+    url: "mailto:4L3XV33@protonmail.com"
+  - label: ORCID
+    url: "https://orcid.org/0009-0000-2158-4293"
