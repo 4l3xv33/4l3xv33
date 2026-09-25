@@ -40,7 +40,7 @@ The generated website appears in `_site/`. That folder and local dependencies ar
 
 ## GitHub Pages
 
-Repository: https://github.com/4l3xv33/website
+Repository: https://github.com/4l3xv33/4l3xv33
 
 Site: https://alexveerasammy.com
 
